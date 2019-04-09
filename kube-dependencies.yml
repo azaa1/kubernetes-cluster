@@ -6,9 +6,11 @@
        name: docker.io
        state: present
        update_cache: true
-     notify: "start docker"
+     notify: 
+       - start docker
 
-   - name: start and enable docker
+  handlers:
+   - name: start docker
      systemd:
        name: docker
        state: started
