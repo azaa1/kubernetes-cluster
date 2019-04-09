@@ -6,6 +6,13 @@
        name: docker.io
        state: present
        update_cache: true
+     notify: "start docker"
+
+   - name: start and enable docker
+     systemd:
+       name: docker
+       state: started
+       enabled: yes
 
    - name: install APT Transport HTTPS
      apt:
@@ -23,15 +30,21 @@
       state: present
       filename: 'kubernetes'
 
+   - name: install kubernetes-cni
+     apt: 
+       name: kubernetes-cni
+       state: present
+       update_cache: true
+
    - name: install kubelet
      apt:
-       name: kubelet=1.11.7-00
+       name: kubelet
        state: present
        update_cache: true
 
    - name: install kubeadm
      apt:
-       name: kubeadm=1.11.7-00
+       name: kubeadm
        state: present
 
 - hosts: master
@@ -39,6 +52,7 @@
   tasks:
    - name: install kubectl
      apt:
-       name: kubectl=1.11.7-00
+       name: kubectl
        state: present
        force: yes
+
