@@ -1,6 +1,6 @@
 Prerequisites:
 
-* SSH key par on your local machine. 
+* SSH key pair on your local machine. 
 
 * Ansible installed on your local machine.
 
