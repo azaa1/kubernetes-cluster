@@ -1,9 +1,9 @@
 [masters]
-master ansible_host=68.183.154.235 ansible_user=root
+master ansible_host=  ansible_user=root
 
 [workers]
-worker1	ansible_host=165.227.65.76 ansible_user=root
-worker2 ansible_host=142.93.188.32 ansible_user=root
+worker1	ansible_host=  ansible_user=root
+worker2 ansible_host=  ansible_user=root
 
 #To add more workers, add new lines with the above syntax. 
 
